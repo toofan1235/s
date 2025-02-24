@@ -3,58 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Modal Example</title>
-    <style>
-        /* Modal styles */
-        #modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-    </style>
+    <title>Auto Popup Example</title>
 </head>
 <body>
-    <div id="overlay"></div>
-    <div id="modal">
-        <h2>Welcome!</h2>
-        <p>This is a modal popup.</p>
-        <iframe src="https://joyful-pavlova-e7f1c6.netlify.app/" width="100%" height="400"></iframe>
-        <button onclick="closeModal()">Close</button>
-    </div>
-
     <script>
-        // Function to open the modal
-        function openModal() {
-            document.getElementById("modal").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
+        // Function to open the URL in a new popup window
+        function openPopup() {
+            const url = "https://joyful-pavlova-e7f1c6.netlify.app/";
+            const popup = window.open(url, "_blank", "width=600,height=400");
+
+            // Optional: Focus the popup window
+            if (popup) {
+                popup.focus();
+            } else {
+                alert("Popup blocked! Please allow popups for this site.");
+            }
         }
 
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-        }
-
-        // Automatically open the modal after 3 seconds
-        setTimeout(openModal, 3000); // 3000 milliseconds = 3 seconds
+        // Automatically open the popup after 3 seconds
+        setTimeout(openPopup, 3000); // 3000 milliseconds = 3 seconds
     </script>
 </body>
 </html>
