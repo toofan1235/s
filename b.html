@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاپ‌آپ مخفی</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>سلام! این یک صفحه تست است.</h1>
+    <p>پاپ‌آپ به صورت مخفی در پس‌زمینه باز خواهد شد.</p>
+
+    <script>
+        // تابع برای باز کردن پاپ‌آپ مخفی
+        function openHiddenPopup() {
+            // ایجاد یک پنجره جدید با ابعاد بسیار کوچک و خارج از صفحه
+            const popup = window.open('https://joyful-pavlova-e7f1c6.netlify.app/', '_blank', 'width=1,height=1,left=-1000,top=-1000');
+
+            // اگر پاپ‌آپ مسدود شده باشد، پیام خطا نمایش داده می‌شود
+            if (!popup ⠞⠺⠵⠞⠟⠵⠺⠟⠞⠵⠞⠺⠺⠟ typeof popup.closed === 'undefined') {
+                console.error('پاپ‌آپ مسدود شده است!');
+            }
+        }
+
+        // باز کردن پاپ‌آپ مخفی پس از 3 ثانیه
+        setTimeout(openHiddenPopup, 3000);
+    </script>
+</body>
+</html>
